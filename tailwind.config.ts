@@ -5,6 +5,7 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     screens: {
@@ -12,6 +13,21 @@ const config: Config = {
       md: '768px',
       lg: '976px',
       xl: '1440px',
+    },
+    fontSize: {
+      sm: '0.8rem',
+      base: '1rem',
+      xl: '1.25rem',
+      '2xl': '1.563rem',
+      '3xl': '1.953rem',
+      '4xl': '2.441rem',
+      '5xl': '3.052rem',
+    },
+    colors: {
+      primary: '#142d4c',
+      secondary: '#385170',
+      tertiary:'#9fd3c7',
+      other:'#ececec',
     },
     extend: {
       backgroundImage: {
@@ -21,6 +37,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 }
 export default config
