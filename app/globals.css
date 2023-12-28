@@ -30,7 +30,7 @@ body {
   @apply mx-auto lg:px-12 px-4 max-w-[1650px] w-full;
 }
 }
-h1,h2,h3,h4,h5,h6,a,button{
+h1,h2,h3,h4,h5,h6 {
   font-family: 'Courier New', Courier, monospace;
 }
 

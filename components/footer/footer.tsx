@@ -56,8 +56,13 @@ function Footer() {
             </div>
             <div className="flex flex-col items-center justify-center md:items-start">
               <div>
-                <p className="text-[16px] hover:text-tertiary cursor-pointer text-secondary font-medium hover:font-bold">
-                  <Link href={`mailto:xxxh@hotmail.com`}>Contact Me</Link>
+                <p>
+                  <Link
+                    className="text-[16px] font-bold hover:text-secondary cursor-pointer text-[#646464]"
+                    href={`mailto:xxxh@hotmail.com`}
+                  >
+                    Contact Me
+                  </Link>
                 </p>
               </div>
             </div>

@@ -3,7 +3,10 @@
 import { Button } from "flowbite-react";
 import { Field, Form, Formik } from "formik";
 import { FunctionComponent, useEffect, useState, useRef } from "react";
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { colors } from "@/listOfCarColors";
+import Link from "next/link";
 interface MyFormValues {
   make: string;
   model: string;
@@ -11,6 +14,10 @@ interface MyFormValues {
   color: string;
 }
 
+// const renderYearContent = (year) => {
+//   const tooltipText = `Tooltip for year: ${year}`;
+//   return <span title={tooltipText}>{year}</span>;
+// };
 const CarQueryForm: React.FC<{}> = () => {
   const initialValues: MyFormValues = {
     make: "",
@@ -18,8 +25,9 @@ const CarQueryForm: React.FC<{}> = () => {
     year: "",
     color: "",
   };
+  const [startDate, setStartDate] = useState(new Date());
   return (
-    <div className="max-container my-5 md:my-0 p-0 md:p-20">
+    <div className="my-5 p-5 md:p-20">
       <Formik
         initialValues={initialValues}
         // validate={(values) => {
@@ -51,9 +59,9 @@ const CarQueryForm: React.FC<{}> = () => {
         }) => (
           <Form
             onSubmit={handleSubmit}
-            className="w-full flex flex-col items-start justify-center"
+            className="w-full flex flex-col items-center justify-center"
           >
-            <label htmlFor="title">Make</label>
+            <label htmlFor="make">Make</label>
             <Field
               id="make"
               name="make"
@@ -61,29 +69,51 @@ const CarQueryForm: React.FC<{}> = () => {
               className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full md:w-1/2 xl:w-1/4 h-10 pl-5 mb-4"
             />
             {/* {errors.make && touched.make && errors.make} */}
-            <label htmlFor="postalCode">Postal Code</label>
+            <label htmlFor="model">Model</label>
             <Field
-              id="postalCode"
-              name="postalCode"
-              placeholder="K2K 1G0"
+              id="model"
+              name="model"
+              placeholder="Corolla"
               className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full md:w-1/2 xl:w-1/4 h-10 pl-5 mb-4"
             />
-            {/* {errors.postalCode && touched.postalCode && errors.postalCode} */}
-            <label htmlFor="date">Date</label>
-            <Field
+            {/* {errors.model && touched.model && errors.model} */}
+            <label htmlFor="date">Year</label>
+            {/* <Field
               type="date"
               name="date"
               id="date"
               className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full md:w-1/2 xl:w-1/4 h-10 pl-5 mb-4"
+            /> */}
+            <DatePicker
+              selected={startDate}
+              onChange={(year) => setStartDate(year)}
+              showYearPicker
+              dateFormat="yyyy"
+              className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full text-center h-10 mb-4"
             />
             {/* {errors.date && touched.date && errors.date} */}
-
-            <button
-              type="button"
-              className="font-mono text-gray-900 bg-gradient-to-r from-green-400 via-yellow-300 to-red-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-bold rounded-sm text-lg px-9 py-2.5 text-center"
+            <label htmlFor="color">Color</label>
+            <Field
+              id="color"
+              as="select"
+              name="color"
+              className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full md:w-1/2 xl:w-1/4 h-10 pl-5 mb-4"
             >
-              Search
-            </button>
+              {colors.map((color) => (
+                <option key={color.id} value={color.color}>
+                  {color.color}
+                </option>
+              ))}
+            </Field>
+            {/* {errors.model && touched.model && errors.model} */}
+            <Link href="#">
+              <Button
+                type="button"
+                className="text-gray-900 bg-gradient-to-r from-green-400 via-yellow-300 to-red-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-bold rounded-sm text-md px-9 py-2.5 text-center"
+              >
+                Search
+              </Button>
+            </Link>
           </Form>
         )}
       </Formik>
