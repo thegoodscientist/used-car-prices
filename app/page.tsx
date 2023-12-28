@@ -24,9 +24,11 @@ export default function Home() {
         <meta property="og:url" content={globalMeta.siteUrl} />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
-      <CarouselComponent data={imagesInSlider} />
-      <CarQueryForm />
-      <Footer />
+      <div className="flex flex-col h-screen justify-between">
+        <CarouselComponent data={imagesInSlider} />
+        <CarQueryForm />
+        <Footer />
+      </div>
       {/* </main> */}
     </>
   );

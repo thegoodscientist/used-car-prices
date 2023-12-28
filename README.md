@@ -34,6 +34,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - [Integrating Firebase with a Next.js app Documentation](https://firebase.google.com/codelabs/firebase-nextjs#0)
 - [Firebase CLI reference](https://firebase.google.com/docs/cli#install_the_firebase_cli)
 
+### Added CSV data to Firestore Firebase using FireFoo
+
+- [The Powerful GUI Client for Firebase Firestore](https://www.firefoo.app/docs/firestore-export-import/import-csv-into-collection)
+
+### For data fetching
+
+- [SWR - React Hooks for Data Fetching](https://swr.vercel.app/)
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
