@@ -22,6 +22,7 @@ export default function Home() {
         <meta property="og:description" content={globalMeta.description} />
         <meta property="og:image" content={globalMeta.siteLogo} />
         <meta property="og:url" content={globalMeta.siteUrl} />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
       <CarouselComponent data={imagesInSlider} />
       <CarQueryForm />
