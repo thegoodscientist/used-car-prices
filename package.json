@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-table": "^8.11.2",
     "flowbite-react": "^0.7.2",
     "formik": "^2.4.5",
     "next": "14.0.4",

@@ -18,6 +18,27 @@ interface MyFormValues {
 //   const tooltipText = `Tooltip for year: ${year}`;
 //   return <span title={tooltipText}>{year}</span>;
 // };
+
+function validateMake(value) {
+  let error;
+  if (!value) {
+    error = "Required";
+  } else if (!/^[a-zA-Z]+\-?[a-zA-Z]+$/.test(value)) {
+    error = "Invalid make name";
+  }
+  return error;
+}
+
+function validateModel(value) {
+  let error;
+  if (!value) {
+    error = "Required";
+  } else if (!/[\w\s.]+$/.test(value)) {
+    error = "Invalid model name";
+  }
+  return error;
+}
+
 const CarQueryForm: React.FC<{}> = () => {
   const initialValues: MyFormValues = {
     make: "",
@@ -27,20 +48,9 @@ const CarQueryForm: React.FC<{}> = () => {
   };
   const [startDate, setStartDate] = useState(new Date());
   return (
-    <div className="my-5 p-5 md:p-20">
+    <div className="my-20 p-5 md:p-20">
       <Formik
         initialValues={initialValues}
-        // validate={(values) => {
-        //   const errors = {}
-        //   if (!values.email) {
-        //     errors.email = 'Required'
-        //   } else if (
-        //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        //   ) {
-        //     errors.email = 'Invalid email address'
-        //   }
-        //   return errors
-        // }}
         onSubmit={(values, actions) => {
           console.log({ values, actions });
           alert(JSON.stringify(values, null, 2));
@@ -67,15 +77,26 @@ const CarQueryForm: React.FC<{}> = () => {
               name="make"
               placeholder="Toyota"
               className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full md:w-1/2 xl:w-1/4 h-10 pl-5 mb-4"
+              validate={validateMake}
             />
-            {/* {errors.make && touched.make && errors.make} */}
+            {errors.make && touched.make && (
+              <div className="flex align-center justify-center text-red-700 text-md text-bold mb-4">
+                {errors.make}
+              </div>
+            )}
             <label htmlFor="model">Model</label>
             <Field
               id="model"
               name="model"
               placeholder="Corolla"
               className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full md:w-1/2 xl:w-1/4 h-10 pl-5 mb-4"
+              validate={validateModel}
             />
+            {errors.model && touched.model && (
+              <div className="flex align-center justify-center text-red-700 text-md text-bold mb-4">
+                {errors.model}
+              </div>
+            )}
             {/* {errors.model && touched.model && errors.model} */}
             <label htmlFor="date">Year</label>
             {/* <Field
