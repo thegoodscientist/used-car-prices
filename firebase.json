@@ -1,0 +1,30 @@
+{
+    "firestore": {
+      "rules": "firestore.rules",
+      "indexes": "firestore.indexes.json"
+    },
+    "emulators": {
+    "firestore": {
+      "port": "8080"
+    },
+    "ui": {
+      "enabled": true,      
+      "port": 4000         
+    },
+    "auth": {
+      "port": "9099"
+    },
+    "functions": {
+      "port": "5001"
+    },
+    "database": {
+      "port": "9000"
+    },
+    "hosting": {
+      "port": "5000"
+    },
+    "pubsub": {  // add this if you want to add pubsub emulator
+      "port": "8085"
+    }
+}
+}

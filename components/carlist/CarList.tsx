@@ -91,11 +91,11 @@ export default function CarsSearchedFor() {
   const columns = useMemo<ColumnDef<Car, any>[]>(
     () => [
       {
-        header: "Searched for...",
+        header: "Search Results",
         footer: (props) => props.column.id,
         columns: [
           {
-            accessorKey: "make",
+            accessorKey: "brand",
             cell: (info) => info.getValue(),
             footer: (props) => props.column.id,
           },
@@ -103,7 +103,21 @@ export default function CarsSearchedFor() {
             accessorFn: (row) => row.accident,
             id: "accident",
             cell: (info) => info.getValue(),
-            header: () => <span>Accident,</span>,
+            header: () => <span>Accident</span>,
+            footer: (props) => props.column.id,
+          },
+          //   {
+          //     accessorFn: (row) => row.brand,
+          //     id: "brand",
+          //     cell: (info) => info.getValue(),
+          //     header: () => <span>Make</span>,
+          //     footer: (props) => props.column.id,
+          //   },
+          {
+            accessorFn: (row) => row.model,
+            id: "model",
+            cell: (info) => info.getValue(),
+            header: () => <span>Model</span>,
             footer: (props) => props.column.id,
           },
           {
@@ -119,6 +133,15 @@ export default function CarsSearchedFor() {
             accessorFn: (row) => row.engine,
             id: "engine",
             header: "Engine",
+            cell: (info) => info.getValue(),
+            footer: (props) => props.column.id,
+            filterFn: "fuzzy",
+            sortingFn: fuzzySort,
+          },
+          {
+            accessorFn: (row) => row.extCol,
+            id: "extCol",
+            header: "Color",
             cell: (info) => info.getValue(),
             footer: (props) => props.column.id,
             filterFn: "fuzzy",
@@ -159,9 +182,9 @@ export default function CarsSearchedFor() {
   });
 
   useEffect(() => {
-    if (table.getState().columnFilters[0]?.id === "fullName") {
-      if (table.getState().sorting[0]?.id !== "fullName") {
-        table.setSorting([{ id: "fullName", desc: false }]);
+    if (table.getState().columnFilters[0]?.id === "make") {
+      if (table.getState().sorting[0]?.id !== "make") {
+        table.setSorting([{ id: "make", desc: false }]);
       }
     }
   }, [table.getState().columnFilters[0]?.id]);

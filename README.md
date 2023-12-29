@@ -42,6 +42,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 - [SWR - React Hooks for Data Fetching](https://swr.vercel.app/)
 
+#### Lessons learnt the hard way......
+
+1. Problem with my solution:
+
+- The 'Used Car Price Prediction Dataset' CSV file from [Kaggle](https://www.kaggle.com/datasets/taeefnajib/used-car-price-prediction-dataset?datasetId=3742543) had >4k entries which were imported into the database.
+- While writing my code and setting up the configurations I hit the daily quota for Firebase Cloud Storage (being 50K document reads) without realizing.
+- I created a new project on Firebase and imported a new set of data, which had fewer number of entries (50).
+- During my search I stumbled across local emulator suites which I set up with the help of Firebase documentations and [makerkit Article](https://makerkit.dev/blog/tutorials/setting-up-firebase-emulators-nextjs) so this issue doesn't happen again.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
