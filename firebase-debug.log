@@ -46,3 +46,67 @@ Java HotSpot(TM) 64-Bit Server VM (build 21.0.1+12-LTS-29, mixed mode, sharing)
 [debug] [2023-12-29T01:27:20.528Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
 [debug] [2023-12-29T01:27:20.528Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","C:\\Users\\salim\\.cache\\firebase\\emulators\\firebase-database-emulator-v4.11.2.jar","--host","127.0.0.1","--port",9000,"--single_project_mode","Warning"],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\salim\\\\.cache\\\\firebase\\\\emulators\\\\firebase-database-emulator-v4.11.2.jar\",\"--host\",\"127.0.0.1\",\"--port\",9000,\"--single_project_mode\",\"Warning\"],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\",\"single_project_mode\"],\"joinArgs\":false}"}}
 [info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[info] i  pubsub: downloading pubsub-emulator-0.7.1.zip... {"metadata":{"emulator":{"name":"pubsub"},"message":"downloading pubsub-emulator-0.7.1.zip..."}}
+[debug] [2023-12-29T01:27:28.852Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/pubsub-emulator-0.7.1.zip 
+[debug] [2023-12-29T01:27:29.028Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/pubsub-emulator-0.7.1.zip 200
+[debug] [2023-12-29T01:27:29.028Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/pubsub-emulator-0.7.1.zip [stream]
+[debug] [2023-12-29T01:27:30.575Z] Data is 65137179
+[debug] [2023-12-29T01:27:30.576Z] [unzip] Entry: pubsub-emulator/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-12-29T01:27:30.576Z] [unzip] Processing entry: pubsub-emulator\
+[debug] [2023-12-29T01:27:30.576Z] [unzip] mkdir: C:\Users\salim\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\
+[debug] [2023-12-29T01:27:30.577Z] [unzip] Entry: pubsub-emulator/lib/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-12-29T01:27:30.577Z] [unzip] Processing entry: pubsub-emulator\lib\
+[debug] [2023-12-29T01:27:30.577Z] [unzip] mkdir: C:\Users\salim\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\lib\
+[debug] [2023-12-29T01:27:30.577Z] [unzip] Entry: pubsub-emulator/lib/cloud-pubsub-emulator-0.7.1.jar (compressed_size=65133164 bytes, uncompressed_size=70597065 bytes)
+[debug] [2023-12-29T01:27:30.578Z] [unzip] Processing entry: pubsub-emulator\lib\cloud-pubsub-emulator-0.7.1.jar
+[debug] [2023-12-29T01:27:30.578Z] [unzip] else mkdir: C:\Users\salim\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\lib
+[debug] [2023-12-29T01:27:30.578Z] [unzip] deflating: C:\Users\salim\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\lib\cloud-pubsub-emulator-0.7.1.jar
+[debug] [2023-12-29T01:27:30.940Z] [unzip] Entry: pubsub-emulator/bin/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-12-29T01:27:30.940Z] [unzip] Processing entry: pubsub-emulator\bin\
+[debug] [2023-12-29T01:27:30.940Z] [unzip] mkdir: C:\Users\salim\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\bin\
+[debug] [2023-12-29T01:27:30.941Z] [unzip] Entry: pubsub-emulator/bin/cloud-pubsub-emulator.bat (compressed_size=885 bytes, uncompressed_size=2271 bytes)
+[debug] [2023-12-29T01:27:30.941Z] [unzip] Processing entry: pubsub-emulator\bin\cloud-pubsub-emulator.bat
+[debug] [2023-12-29T01:27:30.941Z] [unzip] else mkdir: C:\Users\salim\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\bin
+[debug] [2023-12-29T01:27:30.942Z] [unzip] deflating: C:\Users\salim\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\bin\cloud-pubsub-emulator.bat
+[debug] [2023-12-29T01:27:30.944Z] [unzip] Entry: pubsub-emulator/bin/cloud-pubsub-emulator (compressed_size=1954 bytes, uncompressed_size=5142 bytes)
+[debug] [2023-12-29T01:27:30.944Z] [unzip] Processing entry: pubsub-emulator\bin\cloud-pubsub-emulator
+[debug] [2023-12-29T01:27:30.944Z] [unzip] else mkdir: C:\Users\salim\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\bin
+[debug] [2023-12-29T01:27:30.945Z] [unzip] deflating: C:\Users\salim\.cache\firebase\emulators\pubsub-emulator-0.7.1\pubsub-emulator\bin\cloud-pubsub-emulator
+[debug] [2023-12-29T01:27:30.948Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"pubsub"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2023-12-29T01:27:30.948Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"pubsub"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-12-29T01:27:30.948Z] Starting Pub/Sub Emulator with command {"binary":"C:\\Users\\salim\\.cache\\firebase\\emulators\\pubsub-emulator-0.7.1\\pubsub-emulator\\bin\\cloud-pubsub-emulator.bat","args":["--host=127.0.0.1","--port=8085"],"optionalArgs":["port","host"],"joinArgs":true} {"metadata":{"emulator":{"name":"pubsub"},"message":"Starting Pub/Sub Emulator with command {\"binary\":\"C:\\\\Users\\\\salim\\\\.cache\\\\firebase\\\\emulators\\\\pubsub-emulator-0.7.1\\\\pubsub-emulator\\\\bin\\\\cloud-pubsub-emulator.bat\",\"args\":[\"--host=127.0.0.1\",\"--port=8085\"],\"optionalArgs\":[\"port\",\"host\"],\"joinArgs\":true}"}}
+[info] i  pubsub: Pub/Sub Emulator logging to pubsub-debug.log {"metadata":{"emulator":{"name":"pubsub"},"message":"Pub/Sub Emulator logging to \u001b[1mpubsub-debug.log\u001b[22m"}}
+[debug] [2023-12-29T01:27:32.285Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-12-29T01:27:32.285Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-12-29T01:27:32.285Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\salim\\.cache\\firebase\\emulators\\ui-v1.11.7\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\salim\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.7\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-12-29T01:27:32.399Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-12-29T01:27:32.400Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬──────────────────────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port                        │ View in Emulator UI             │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099                   │ http://127.0.0.1:4000/auth      │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Functions      │ Failed to initialize (see above) │                                 │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080                   │ http://127.0.0.1:4000/firestore │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Database       │ 127.0.0.1:9000                   │ http://127.0.0.1:4000/database  │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Hosting        │ Failed to initialize (see above) │                                 │
+├────────────────┼──────────────────────────────────┼─────────────────────────────────┤
+│ Pub/Sub        │ 127.0.0.1:8085                   │ n/a                             │
+└────────────────┴──────────────────────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
