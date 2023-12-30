@@ -99,12 +99,6 @@ const CarQueryForm: React.FC<{}> = () => {
             )}
             {/* {errors.model && touched.model && errors.model} */}
             <label htmlFor="date">Year</label>
-            {/* <Field
-              type="date"
-              name="date"
-              id="date"
-              className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full md:w-1/2 xl:w-1/4 h-10 pl-5 mb-4"
-            /> */}
             <DatePicker
               selected={startDate}
               onChange={(year) => setStartDate(year)}

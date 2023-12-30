@@ -59,14 +59,14 @@ export default function UserDashboard() {
                 <tr key={content.id}>
                   <td>{content.accident}</td>
                   <td>{content.brand}</td>
-                  <td>{content.cleanTitle}</td>
+                  <td>{content.clean_title}</td>
                   <td>{content.engine}</td>
-                  <td>{content.extCol}</td>
-                  <td>{content.fuelType}</td>
-                  <td>{content.intCol}</td>
-                  <td>{content.mileage}</td>
+                  <td>{content.ext_col}</td>
+                  <td>{content.fuel_type}</td>
+                  <td>{content.int_col}</td>
+                  <td>{content.milage}</td>
                   <td>{content.model}</td>
-                  <td>{content.year}</td>
+                  <td>{content.model_year}</td>
                   <td>{content.price}</td>
                   <td>{content.transmission}</td>
                 </tr>

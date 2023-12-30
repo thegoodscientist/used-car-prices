@@ -5,6 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
+npm i
 npm run dev
 # or
 yarn dev
@@ -20,12 +21,14 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## References
 
-To learn more about Next.js, take a look at the following resources:
+The following resources were used to build this application:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [How to Use Cloud Firestore in a React App](https://www.freecodecamp.org/news/how-to-use-the-firebase-database-in-react/)
+- [Formik docs](https://formik.org/)
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
@@ -38,9 +41,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 - [The Powerful GUI Client for Firebase Firestore](https://www.firefoo.app/docs/firestore-export-import/import-csv-into-collection)
 
-### For data fetching
+### For data fetching (removed later)
 
 - [SWR - React Hooks for Data Fetching](https://swr.vercel.app/)
+
+### Resources used when testing out Firestore emulator
+
+- [Using Firebase Emulator Suite and React for local-first development](https://blog.logrocket.com/using-firebase-emulator-suite-and-react-for-local-first-development/)
+- [How to setup a Firebase demo project](https://stackoverflow.com/questions/67781589/how-to-setup-a-firebase-demo-project/68466383#68466383)
+- [Google's Firebase Emulator Suite Tutorial](https://firebase.google.com/docs/emulator-suite)
+- [I installed Firebase Emulator for localhost dev. How do I configure my environment to call the emulator?](https://www.reddit.com/r/Firebase/comments/163xt93/i_installed_firebase_emulator_for_localhost_dev/)
+- [Setting up the Firebase Emulator for local development.](https://medium.com/@jalomechirwa/setting-up-the-firebase-emulator-for-local-development-f2277c53bc18)
 
 #### Lessons learnt the hard way......
 
