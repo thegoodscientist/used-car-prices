@@ -24,8 +24,10 @@ export default function Home() {
         <meta property="og:url" content={globalMeta.siteUrl} />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
+      <div className="w-full min-h-96 bg-local bg-no-repeat bg-center bg-cover bg-[url('/images/nabeel-syed-Jk3-Uhdwjcs-unsplash.jpg')]"></div>
       <div className="flex flex-col h-screen justify-between">
-        <CarouselComponent data={imagesInSlider} />
+        {/* <CarouselComponent data={imagesInSlider} /> */}
+
         <CarQueryForm />
         <Footer />
       </div>
