@@ -45,6 +45,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 - [SWR - React Hooks for Data Fetching](https://swr.vercel.app/)
 
+### Querying Firestore
+
+- [TypeScript in React – How to Manage State with Firebase Cloud Firestore](https://www.freecodecamp.org/news/how-to-manage-state-in-react-apps-with-firebase-cloud-firestore/#howtocreateyourtodolistmarkup)
+
 ### Resources used when testing out Firestore emulator
 
 - [Using Firebase Emulator Suite and React for local-first development](https://blog.logrocket.com/using-firebase-emulator-suite-and-react-for-local-first-development/)

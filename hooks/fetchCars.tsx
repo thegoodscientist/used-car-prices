@@ -1,8 +1,8 @@
-import { db } from "@/components/lib/firebase/config";
-import { collection, getDocs, DocumentSnapshot } from "firebase/firestore";
+import { db } from '@/components/lib/firebase/config';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 // import useSWR from "swr";
 
-// interface CarData {
+// type CarData = {
 //   id: string;
 //   accident: string;
 //   brand: string;
@@ -16,24 +16,28 @@ import { collection, getDocs, DocumentSnapshot } from "firebase/firestore";
 //   year: number;
 //   price: string;
 //   transmission: string;
-// }
+// }[];
 
-export default async function fetchCars() {
-  const carsCollection = await getDocs(collection(db, "used_cars"));
-  const carsData: any[] = [];
-  try {
-    carsCollection.forEach((doc) => {
-      carsData.push({ id: doc.id, ...doc.data() });
-      //   console.log("Car", car);
-      //   carsData.push(car);
-    });
-
-    console.log("Cars array", carsData);
-    return carsData;
-  } catch (error) {
-    console.error("Error fetching cars:", error);
-    throw error;
-  }
+export default async function fetchCars(parameters) {
+  const carsRef = collection(db, 'used_cars');
+  const q = query(
+    carsRef,
+    where('brand', '==', parameters.make),
+    where('model', '==', parameters.model),
+    where('ext_col', '==', parameters.color)
+  ); //get collection with respect to if completed is true or not
+  const querySnapshot = await getDocs(q);
+  const carsList = querySnapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+    // return {
+    //   //return data compatible with data types specified in the tasks variable
+    //   title: data.title,
+    //   completed: data.completed,
+    //   id: doc.id,
+    // };
+  }));
+  console.log('From Firestore', carsList);
 }
 
 // export default function useFetchCars() {
