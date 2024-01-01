@@ -1,4 +1,6 @@
 import DisplayCars from './displayCars';
+import Link from 'next/link';
+import { Button } from 'flowbite-react';
 
 // interface CarData {
 //   id: string;
@@ -17,23 +19,24 @@ import DisplayCars from './displayCars';
 // }
 
 export default function UserDashboard() {
-  // const [carData, setCarData] = useState([]);
-
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const data = await fetchCars();
-  //     setCarData(data);
-  //   }
-
-  //   fetchData();
-  // }, []);
-
   return (
-    <div className="w-full  text-xs sm:text-sm mx-auto flex flex-col flex-1 gap-3 sm:gap-5">
-      <div className="flex items-center">
-        <h1 className="text-3xl">Cars List</h1>
+    <div className="w-full text-xs sm:text-sm mx-auto flex flex-col flex-1 gap-3 sm:gap-5">
+      <div className="flex justify-center items-center">
+        <div className="flex items-center my-10">
+          <h1 className="text-4xl font-extrabold">Cars List</h1>
+        </div>
       </div>
       <DisplayCars />
+      <div className="m-8 flex justify-center items-center">
+        <Link href="/">
+          <Button
+            type="submit"
+            className="text-gray-900 bg-tertiary font-bold rounded-sm text-md px-9 py-2.5 text-center"
+          >
+            Back to Homepage
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

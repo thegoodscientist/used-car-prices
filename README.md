@@ -67,6 +67,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - I created a new project on Firebase and imported a new set of data, which had fewer number of entries (50).
 - During my search I stumbled across local emulator suites which I set up with the help of Firebase documentations and [makerkit Article](https://makerkit.dev/blog/tutorials/setting-up-firebase-emulators-nextjs) so this issue doesn't happen again.
 
+2. Problem with my solution:
+
+- The biggest hurdle after researching and successfully implementing Firestore querying was trying to figure out how to pass the search parameters from the home page (where the user entered what they want) to the display page. I googled terms like 'Next.js 14 app router pass form data to another page' or 'Next.js 14 React query data page' and so on. After 2 stressful days (and yes I did go to bed crying) of non-stop research with many trial and errors, I used the following resources to get the data transfer between pages to work:
+
+* [How to change the URL parameters in real time using Next.js 14](https://medium.com/@martinval11/how-to-change-the-url-parameters-in-real-time-using-next-js-14-76f25d63cec6)
+* [How to access query parameters in Next.js 13.4 with the new app router?](https://stackoverflow.com/questions/76592804/how-to-access-query-parameters-in-next-js-13-4-with-the-new-app-router)
+* Other resources I came across during my search: [Diving into Server Actions in Next.js 14](https://blog.logrocket.com/diving-into-server-actions-next-js-14/); [Forms with Next.js and Server Actions](https://github.com/vercel/next.js/tree/canary/examples/next-forms) + [Using Forms in Next.js (Server Actions, Revalidating Data)](https://youtu.be/dDpZfOQBMaU?si=LtmNIaCTdMCIGKft)
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

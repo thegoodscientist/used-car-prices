@@ -58,7 +58,7 @@ const CarQueryForm: React.FC<{}> = () => {
     make: '',
     model: '',
     // year: '',
-    color: 'Any',
+    color: '',
   };
   const router = useRouter();
 
@@ -67,15 +67,15 @@ const CarQueryForm: React.FC<{}> = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={(values, actions) => {
-          console.log('Values: ', values);
-          alert(JSON.stringify(values, null, 2));
+          // console.log('Values: ', values);
+          // alert(JSON.stringify(values, null, 2));
           // actions.setSubmitting(false);
 
           // Convert the search values into a query string
           const queryString = Object.entries(values)
             .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
             .join('&');
-          console.log('Query string Home: ', queryString);
+          // console.log('Query string Home: ', queryString);
           // Navigate to the results page with the search values as query parameters
           router.push(`/carlist?${queryString}`);
         }}
@@ -153,7 +153,6 @@ const CarQueryForm: React.FC<{}> = () => {
             </Field>
             {/* {errors.model && touched.model && errors.model} */}
             {/* <Link href="/carlist"> */}
-            {/* <Link href="#"> */}
             <Button
               type="submit"
               className="text-gray-900 bg-gradient-to-r from-green-400 via-yellow-300 to-red-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-bold rounded-sm text-md px-9 py-2.5 text-center"

@@ -31,12 +31,6 @@ export default async function fetchCars(parameters) {
   const carsList = querySnapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
-    // return {
-    //   //return data compatible with data types specified in the tasks variable
-    //   title: data.title,
-    //   completed: data.completed,
-    //   id: doc.id,
-    // };
   }));
   // console.log('From Firestore', carsList);
   return carsList;

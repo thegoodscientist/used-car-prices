@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import fetchCars from '@/components/carlist/fetchCars';
 
@@ -10,7 +9,6 @@ type CarData = {
   model: string;
 }[];
 
-// export default async function DisplayCarsComponent() {
 export default function DisplayCarsComponent() {
   const router = useRouter();
   const pathname = usePathname();
@@ -42,45 +40,75 @@ export default function DisplayCarsComponent() {
 
   return (
     <section>
-      <div className="">
-        <>
-          <table className="table-dark">
-            <thead>
-              <tr>
-                <th>Accident</th>
-                <th>Brand</th>
-                <th>Clean Title</th>
-                <th>Engine</th>
-                <th>Exterior Color</th>
-                <th>Fuel Type</th>
-                <th>Interior Color</th>
-                <th>Mileage</th>
-                <th>Model</th>
-                <th>Year</th>
-                <th>Price</th>
-                <th>Transmission</th>
+      <div className="mx-2 relative overflow-x-auto">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                Brand
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Accident
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Clean Title
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Engine
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Exterior Color
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Fuel Type
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Interior Color
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Mileage
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Model
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Year
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Price
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Transmission
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {carsList.map((content) => (
+              <tr
+                key={content.id}
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+              >
+                <th
+                  scope="row"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  {content.brand}
+                </th>
+                <td className="px-6 py-4">{content.accident}</td>
+                <td className="px-6 py-4">{content.clean_title}</td>
+                <td className="px-6 py-4">{content.engine}</td>
+                <td className="px-6 py-4">{content.ext_col}</td>
+                <td className="px-6 py-4">{content.fuel_type}</td>
+                <td className="px-6 py-4">{content.int_col}</td>
+                <td className="px-6 py-4">{content.milage}</td>
+                <td className="px-6 py-4">{content.model}</td>
+                <td className="px-6 py-4">{content.model_year}</td>
+                <td className="px-6 py-4">{content.price}</td>
+                <td className="px-6 py-4">{content.transmission}</td>
               </tr>
-            </thead>
-            <tbody>
-              {carsList.map((content) => (
-                <tr key={content.id}>
-                  <td>{content.accident}</td>
-                  <td>{content.brand}</td>
-                  <td>{content.clean_title}</td>
-                  <td>{content.engine}</td>
-                  <td>{content.ext_col}</td>
-                  <td>{content.fuel_type}</td>
-                  <td>{content.int_col}</td>
-                  <td>{content.milage}</td>
-                  <td>{content.model}</td>
-                  <td>{content.model_year}</td>
-                  <td>{content.price}</td>
-                  <td>{content.transmission}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   );
