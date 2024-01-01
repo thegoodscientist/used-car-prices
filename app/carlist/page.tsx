@@ -1,9 +1,9 @@
-"use client";
-import Image from "next/image";
-import Footer from "@/components/footer/footer";
-import Head from "next/head";
-import globalMeta from "@/globalmeta";
-import CarsSearchedFor from "@/components/carlist/CarList";
+// 'use client';
+import Image from 'next/image';
+import Footer from '@/components/footer/footer';
+import Head from 'next/head';
+import globalMeta from '@/globalmeta';
+import CarsSearchedFor from '@/components/carlist/CarList';
 
 export default function SearchedCarsList() {
   return (

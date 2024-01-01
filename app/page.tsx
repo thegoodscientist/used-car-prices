@@ -1,16 +1,18 @@
-import Image from "next/image";
-import Footer from "@/components/footer/footer";
-import Head from "next/head";
-import globalMeta from "@/globalmeta";
-import CarouselComponent from "@/components/(index)/_Carousel";
-import CarQueryForm from "@/components/(index)/_Form";
+'use client';
+import Image from 'next/image';
+import Footer from '@/components/footer/footer';
+import Head from 'next/head';
+import globalMeta from '@/globalmeta';
+import CarouselComponent from '@/components/(index)/_Carousel';
+import CarQueryForm from '@/components/(index)/_Form';
 
 export default function Home() {
   const imagesInSlider = [
-    { img: "/images/aleksandr-popov-Xbh_OGLRfUM-unsplash.jpg" },
-    { img: "/images/alex-suprun-A53o1drQS2k-unsplash.jpg" },
-    { img: "/images/nabeel-syed-Jk3-Uhdwjcs-unsplash.jpg" },
+    { img: '/images/aleksandr-popov-Xbh_OGLRfUM-unsplash.jpg' },
+    { img: '/images/alex-suprun-A53o1drQS2k-unsplash.jpg' },
+    { img: '/images/nabeel-syed-Jk3-Uhdwjcs-unsplash.jpg' },
   ];
+
   return (
     <>
       <Head>

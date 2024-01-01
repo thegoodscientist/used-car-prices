@@ -1,5 +1,6 @@
 import { db } from '@/components/lib/firebase/config';
 import { collection, getDocs, query, where } from 'firebase/firestore';
+
 // import useSWR from "swr";
 
 // type CarData = {
@@ -37,7 +38,8 @@ export default async function fetchCars(parameters) {
     //   id: doc.id,
     // };
   }));
-  console.log('From Firestore', carsList);
+  // console.log('From Firestore', carsList);
+  return carsList;
 }
 
 // export default function useFetchCars() {

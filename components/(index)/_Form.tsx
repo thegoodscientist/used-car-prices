@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import { Button } from 'flowbite-react';
 import { Field, Form, Formik } from 'formik';
@@ -7,29 +7,30 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { colors } from '@/listOfCarColors';
 import Link from 'next/link';
-import fetchCars from '@/hooks/fetchCars';
+import { useRouter } from 'next/navigation';
+
 interface MyFormValues {
   make: string;
   model: string;
-  year: string;
+  // year: string;
   color: string;
 }
 
 //Ref: https://gist.github.com/thypirate/e8aeaef75cf046882fb7c3b68d34db22
-const DatepickerField = ({ field, form, ...props }) => (
-  // OR const { setFieldValue } = form;
-  // OR const { value, name } = field;
-  <div>
-    <DatePicker
-      showYearPicker
-      dateFormat="yyyy"
-      className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full text-center h-10 mb-4"
-      {...field}
-      selected={field.value}
-      onChange={(val) => form.setFieldValue(field.name, val)}
-    />
-  </div>
-);
+// const DatepickerField = ({ field, form, ...props }) => (
+//   // OR const { setFieldValue } = form;
+//   // OR const { value, name } = field;
+//   <div>
+//     <DatePicker
+//       showYearPicker
+//       dateFormat="yyyy"
+//       className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full text-center h-10 mb-4"
+//       {...field}
+//       selected={field.value}
+//       onChange={(val) => form.setFieldValue(field.name, val)}
+//     />
+//   </div>
+// );
 
 function validateMake(value) {
   let error;
@@ -52,21 +53,31 @@ function validateModel(value) {
 }
 
 const CarQueryForm: React.FC<{}> = () => {
+  // const CarQueryForm = () => {
   const initialValues: MyFormValues = {
     make: '',
     model: '',
-    year: '',
+    // year: '',
     color: 'Any',
   };
-  //   const [data, setData] = useState([]);
+  const router = useRouter();
+
   return (
     <div className="my-20 p-5 md:p-20">
       <Formik
         initialValues={initialValues}
         onSubmit={(values, actions) => {
-          console.log({ values, actions });
+          console.log('Values: ', values);
           alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
+          // actions.setSubmitting(false);
+
+          // Convert the search values into a query string
+          const queryString = Object.entries(values)
+            .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+            .join('&');
+          console.log('Query string Home: ', queryString);
+          // Navigate to the results page with the search values as query parameters
+          router.push(`/carlist?${queryString}`);
         }}
       >
         {({
@@ -114,7 +125,7 @@ const CarQueryForm: React.FC<{}> = () => {
               </div>
             )}
             {/* {errors.model && touched.model && errors.model} */}
-            <label htmlFor="date">Year</label>
+            {/* <label htmlFor="date">Year</label> */}
             {/* <DatePicker
               selected={startDate}
               onChange={(year) => setStartDate(values.year, year)}
@@ -123,7 +134,7 @@ const CarQueryForm: React.FC<{}> = () => {
               dateFormat="yyyy"
               className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full text-center h-10 mb-4"
             /> */}
-            <Field id="year" name="year" component={DatepickerField} />
+            {/* <Field id="year" name="year" component={DatepickerField} /> */}
             {/* {errors.date && touched.date && errors.date} */}
             <label htmlFor="color">Color</label>
             <Field
@@ -142,15 +153,14 @@ const CarQueryForm: React.FC<{}> = () => {
             </Field>
             {/* {errors.model && touched.model && errors.model} */}
             {/* <Link href="/carlist"> */}
-            <Link href="#">
-              <Button
-                type="button"
-                onClick={() => fetchCars(values)}
-                className="text-gray-900 bg-gradient-to-r from-green-400 via-yellow-300 to-red-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-bold rounded-sm text-md px-9 py-2.5 text-center"
-              >
-                Search
-              </Button>
-            </Link>
+            {/* <Link href="#"> */}
+            <Button
+              type="submit"
+              className="text-gray-900 bg-gradient-to-r from-green-400 via-yellow-300 to-red-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-bold rounded-sm text-md px-9 py-2.5 text-center"
+            >
+              Search
+            </Button>
+            {/* </Link> */}
             {/* <button type="submit">Submit</button> */}
           </Form>
         )}
