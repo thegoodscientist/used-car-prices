@@ -48,6 +48,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ### Querying Firestore
 
 - [TypeScript in React – How to Manage State with Firebase Cloud Firestore](https://www.freecodecamp.org/news/how-to-manage-state-in-react-apps-with-firebase-cloud-firestore/#howtocreateyourtodolistmarkup)
+- [Cloud Firestore Compound (AND) queries](https://firebase.google.com/docs/firestore/query-data/queries#array_membership)
 
 ### Resources used when testing out Firestore emulator
 
