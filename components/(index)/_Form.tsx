@@ -5,7 +5,7 @@ import { Field, Form, Formik } from 'formik';
 import { FunctionComponent, useEffect, useState, useRef } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { colors } from '@/listOfCarColors';
+import { colors, makes, models } from '@/dropDownMenuData';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -36,9 +36,10 @@ function validateMake(value) {
   let error;
   if (!value) {
     error = 'Required';
-  } else if (!/^[a-zA-Z]+\-?[a-zA-Z]+$/.test(value)) {
-    error = 'Invalid make name';
   }
+  // else if (!/^[a-zA-Z]+\-?[a-zA-Z]+$/.test(value)) {
+  //   error = 'Invalid make name';
+  // }
   return error;
 }
 
@@ -46,8 +47,17 @@ function validateModel(value) {
   let error;
   if (!value) {
     error = 'Required';
-  } else if (!/[\w\s.]+$/.test(value)) {
-    error = 'Invalid model name';
+  }
+  // else if (!/[\w\s.]+$/.test(value)) {
+  //   error = 'Invalid model name';
+  // }
+  return error;
+}
+
+function validateColor(value) {
+  let error;
+  if (!value) {
+    error = 'Required';
   }
   return error;
 }
@@ -97,13 +107,22 @@ const CarQueryForm: React.FC<{}> = () => {
             <label htmlFor="make">Make</label>
             <Field
               id="make"
+              as="select"
               name="make"
-              placeholder="Toyota"
               className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full md:w-1/2 xl:w-1/4 h-10 pl-5 mb-4"
               validate={validateMake}
               onChange={handleChange}
               value={values.make}
-            />
+            >
+              <option value="" disabled>
+                Select Make
+              </option>
+              {makes.map((make) => (
+                <option key={make.id} value={make.make}>
+                  {make.make}
+                </option>
+              ))}
+            </Field>
             {errors.make && touched.make && (
               <div className="flex align-center justify-center text-red-700 text-md text-bold mb-4">
                 {errors.make}
@@ -113,12 +132,22 @@ const CarQueryForm: React.FC<{}> = () => {
             <Field
               id="model"
               name="model"
-              placeholder="Corolla"
+              as="select"
               className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full md:w-1/2 xl:w-1/4 h-10 pl-5 mb-4"
               validate={validateModel}
               onChange={handleChange}
+              placeholder="Select model"
               value={values.model}
-            />
+            >
+              <option value="" disabled>
+                Select Model
+              </option>
+              {models.map((model) => (
+                <option key={model.id} value={model.model}>
+                  {model.model}
+                </option>
+              ))}
+            </Field>
             {errors.model && touched.model && (
               <div className="flex align-center justify-center text-red-700 text-md text-bold mb-4">
                 {errors.model}
@@ -143,15 +172,24 @@ const CarQueryForm: React.FC<{}> = () => {
               name="color"
               className="flex align-center justify-center placeholder-gray-400 text-gray-700 text-sm w-full md:w-1/2 xl:w-1/4 h-10 pl-5 mb-4"
               onChange={handleChange}
+              validate={validateColor}
               value={values.color}
+              placeholder="Select color"
             >
+              <option value="" disabled>
+                Select Color
+              </option>
               {colors.map((color) => (
                 <option key={color.id} value={color.color}>
                   {color.color}
                 </option>
               ))}
             </Field>
-            {/* {errors.model && touched.model && errors.model} */}
+            {errors.color && touched.color && (
+              <div className="flex align-center justify-center text-red-700 text-md text-bold mb-4">
+                {errors.color}
+              </div>
+            )}
             {/* <Link href="/carlist"> */}
             <Button
               type="submit"
